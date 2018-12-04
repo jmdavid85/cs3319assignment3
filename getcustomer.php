@@ -1,4 +1,6 @@
 <?php
+ //This code gets all of the current customers to be put into a combobox
+ include "connecttodb.php";
  $query = "SELECT * FROM Customer ORDER BY LastName;";
  $result = mysqli_query($connection,$query);
  if(!$result){
@@ -11,4 +13,5 @@
   echo "</option>";
  }
  mysqli_free_result($result);
+ mysqli_close($connection);
 ?>
